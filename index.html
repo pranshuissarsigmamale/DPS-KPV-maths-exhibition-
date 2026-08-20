@@ -2,1120 +2,597 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
+    <title>Maths Hub</title>
+
     <meta
         name="description"
-        content="Interactive Maths Hub - Learn, practise, quiz, track progress and master mathematics."
+        content="Interactive Class 8 Mathematics learning hub"
     >
 
-    <meta
-        name="theme-color"
-        content="#ffffff"
-    >
-
-    <title>Interactive Maths Hub</title>
-
-    <!-- Main stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- =========================================================
-         APP CONTAINER
-         ========================================================= -->
+<!-- =========================================================
+     APP
+========================================================= -->
 
-    <div class="app-container">
+<div id="app">
 
-        <!-- =====================================================
-             SIDEBAR
-             ===================================================== -->
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
 
-        <aside
-            class="sidebar"
-            id="sidebar"
-            aria-label="Main navigation"
-        >
+    <aside class="sidebar" id="sidebar">
 
-            <!-- Sidebar Header -->
-            <div class="sidebar-header">
+        <div class="brand">
+            <div class="brand-icon">∑</div>
 
-                <div class="brand">
-                    <div class="brand-icon" aria-hidden="true">
-                        ∑
-                    </div>
+            <div>
+                <h1>Maths Hub</h1>
+                <p>Learn • Play • Master</p>
+            </div>
+        </div>
 
-                    <div class="brand-text">
-                        <h1>Maths Hub</h1>
-                        <p>Learn. Practise. Master.</p>
-                    </div>
+        <nav class="sidebar-nav">
+
+            <button class="nav-item active" data-page="home">
+                <span>⌂</span>
+                <span>Home</span>
+            </button>
+
+            <button class="nav-item" data-page="learn">
+                <span>📚</span>
+                <span>Learn</span>
+            </button>
+
+            <button class="nav-item" data-page="practice">
+                <span>✏️</span>
+                <span>Practice</span>
+            </button>
+
+            <button class="nav-item" data-page="quiz">
+                <span>🎮</span>
+                <span>Quiz</span>
+            </button>
+
+            <button class="nav-item" data-page="progress">
+                <span>📊</span>
+                <span>Progress</span>
+            </button>
+
+            <button class="nav-item" data-page="speed">
+                <span>⚡</span>
+                <span>Speed Challenge</span>
+            </button>
+
+            <button class="nav-item" data-page="calculator">
+                <span>🧮</span>
+                <span>Calculators</span>
+            </button>
+
+            <button class="nav-item" data-page="real-life">
+                <span>🌍</span>
+                <span>Maths in Real Life</span>
+            </button>
+
+            <button class="nav-item" data-page="tricks">
+                <span>💡</span>
+                <span>Maths Tricks</span>
+            </button>
+
+            <button class="nav-item" data-page="settings">
+                <span>⚙️</span>
+                <span>Settings</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="mini-profile">
+
+                <div class="avatar">M</div>
+
+                <div>
+                    <strong>Maths Explorer</strong>
+                    <small id="sidebarLevel">
+                        Level 1 • Beginner
+                    </small>
                 </div>
-
-                <button
-                    class="sidebar-close"
-                    id="sidebarClose"
-                    type="button"
-                    aria-label="Close navigation"
-                >
-                    ×
-                </button>
 
             </div>
 
+            <div class="sidebar-xp">
 
-            <!-- Sidebar Navigation -->
-            <nav
-                class="sidebar-navigation"
-                aria-label="Maths Hub sections"
+                <div class="xp-row">
+                    <span>XP</span>
+                    <strong id="sidebarXP">0</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div
+                        class="progress-fill"
+                        id="sidebarXPBar"
+                    ></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="main">
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button
+                class="mobile-menu"
+                id="mobileMenu"
+                aria-label="Open menu"
             >
+                ☰
+            </button>
 
-                <p class="navigation-label">
-                    MAIN
-                </p>
+            <div class="breadcrumb" id="breadcrumb">
+                Home
+            </div>
 
-                <button
-                    class="nav-item active"
-                    type="button"
-                    data-page="home"
-                >
-                    <span class="nav-icon">⌂</span>
-                    <span class="nav-text">Home</span>
-                </button>
+            <div class="top-actions">
 
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="chapters"
-                >
-                    <span class="nav-icon">▦</span>
-                    <span class="nav-text">Chapters</span>
-                </button>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="practice"
-                >
-                    <span class="nav-icon">✎</span>
-                    <span class="nav-text">Practice</span>
-                </button>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="quiz"
-                >
-                    <span class="nav-icon">?</span>
-                    <span class="nav-text">Maths Quiz</span>
-                </button>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="calculators"
-                >
-                    <span class="nav-icon">▣</span>
-                    <span class="nav-text">Calculators</span>
-                </button>
-
-
-                <p class="navigation-label">
-                    CHALLENGES
-                </p>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="speed"
-                >
-                    <span class="nav-icon">⚡</span>
-                    <span class="nav-text">Speed Challenge</span>
-                </button>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="daily"
-                >
-                    <span class="nav-icon">★</span>
-                    <span class="nav-text">Daily Challenge</span>
-                </button>
-
-
-                <p class="navigation-label">
-                    YOUR PROGRESS
-                </p>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="progress"
-                >
-                    <span class="nav-icon">▥</span>
-                    <span class="nav-text">Progress</span>
-                </button>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="achievements"
-                >
-                    <span class="nav-icon">♛</span>
-                    <span class="nav-text">Achievements</span>
-                </button>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="leaderboard"
-                >
-                    <span class="nav-icon">♟</span>
-                    <span class="nav-text">Leaderboard</span>
-                </button>
-
-
-                <p class="navigation-label">
-                    EXPLORE
-                </p>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="real-life"
-                >
-                    <span class="nav-icon">◎</span>
-                    <span class="nav-text">Maths in Real Life</span>
-                </button>
-
-
-                <button
-                    class="nav-item"
-                    type="button"
-                    data-page="tricks"
-                >
-                    <span class="nav-icon">💡</span>
-                    <span class="nav-text">Maths Tricks</span>
-                </button>
-
-            </nav>
-
-
-            <!-- Sidebar Bottom -->
-            <div class="sidebar-bottom">
-
-                <div class="sidebar-level-card">
-
-                    <div class="level-card-top">
-
-                        <span>
-                            Current Level
-                        </span>
-
-                        <strong id="sidebarLevel">
-                            Beginner
-                        </strong>
-
-                    </div>
-
-                    <div class="level-progress">
-                        <div
-                            class="level-progress-bar"
-                            id="sidebarLevelProgress"
-                        ></div>
-                    </div>
-
-                    <p id="sidebarXPText">
-                        0 XP
-                    </p>
-
+                <div class="streak-pill">
+                    🔥
+                    <span id="topStreak">0</span>
                 </div>
 
-
                 <button
-                    class="nav-item settings-item"
-                    type="button"
-                    data-page="settings"
+                    class="icon-button"
+                    id="themeToggle"
+                    title="Toggle theme"
                 >
-                    <span class="nav-icon">⚙</span>
-                    <span class="nav-text">Settings</span>
+                    ☀️
                 </button>
 
             </div>
 
-        </aside>
+        </header>
 
 
-        <!-- =====================================================
-             SIDEBAR OVERLAY
-             ===================================================== -->
+        <!-- =================================================
+             PAGE CONTAINER
+        ================================================== -->
 
-        <div
-            class="sidebar-overlay"
-            id="sidebarOverlay"
-            aria-hidden="true"
-        ></div>
-
-
-        <!-- =====================================================
-             MAIN AREA
-             ===================================================== -->
-
-        <main class="main-area">
+        <div class="page-container">
 
             <!-- =================================================
-                 TOP BAR
-                 ================================================= -->
+                 HOME
+            ================================================== -->
 
-            <header class="topbar">
+            <section
+                class="page active-page"
+                id="page-home"
+            >
 
-                <div class="topbar-left">
+                <div class="hero">
 
-                    <button
-                        class="menu-button"
-                        id="menuButton"
-                        type="button"
-                        aria-label="Open navigation"
-                    >
-                        ☰
-                    </button>
+                    <div class="hero-content">
 
-                    <div class="page-heading">
-                        <span
-                            class="page-kicker"
-                            id="pageKicker"
-                        >
-                            Welcome back
+                        <span class="eyebrow">
+                            CLASS 8 • 2026–27
                         </span>
 
-                        <h2 id="pageTitle">
-                            Maths Hub
+                        <h2>
+                            Welcome to your
+                            <span>Maths Hub.</span>
+                        </h2>
+
+                        <p>
+                            Learn concepts, practise questions,
+                            challenge yourself and level up your
+                            mathematics skills.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <button
+                                class="primary-button"
+                                data-page="learn"
+                            >
+                                Start Learning →
+                            </button>
+
+                            <button
+                                class="secondary-button"
+                                data-page="quiz"
+                            >
+                                Take a Quiz
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="hero-stat-card">
+
+                        <div class="stat-symbol">∑</div>
+
+                        <strong id="heroXP">0 XP</strong>
+
+                        <span>Your current XP</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HONEYCOMBS -->
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            HEXAGON LAB
+                        </span>
+
+                        <h2>
+                            52 Maths Facts
+                        </h2>
+
+                        <p>
+                            Explore the honeycomb and discover
+                            a new fact in every hexagon.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div
+                    class="honeycomb-grid"
+                    id="honeycombGrid"
+                ></div>
+
+
+                <!-- QUICK ACCESS -->
+
+                <div class="section-heading quick-heading">
+
+                    <div>
+                        <span class="eyebrow">
+                            QUICK ACCESS
+                        </span>
+
+                        <h2>
+                            What do you want to do?
                         </h2>
                     </div>
 
                 </div>
 
-
-                <div class="topbar-right">
-
-                    <div class="topbar-xp">
-
-                        <span class="topbar-xp-icon">
-                            ✦
-                        </span>
-
-                        <span id="topbarXP">
-                            0 XP
-                        </span>
-
-                    </div>
-
-
-                    <div class="topbar-streak">
-
-                        <span>
-                            🔥
-                        </span>
-
-                        <strong id="topbarStreak">
-                            0
-                        </strong>
-
-                    </div>
-
+                <div class="quick-grid">
 
                     <button
-                        class="profile-button"
-                        id="profileButton"
-                        type="button"
-                        aria-label="Open profile"
+                        class="quick-card"
+                        data-page="learn"
                     >
-                        <span class="profile-avatar">
-                            M
-                        </span>
+                        <span>📚</span>
+                        <strong>Learn</strong>
+                        <small>
+                            Explore all 14 chapters
+                        </small>
+                    </button>
 
-                        <span class="profile-name">
-                            Maths Learner
-                        </span>
+                    <button
+                        class="quick-card"
+                        data-page="quiz"
+                    >
+                        <span>🎮</span>
+                        <strong>Quiz</strong>
+                        <small>
+                            Test your knowledge
+                        </small>
+                    </button>
+
+                    <button
+                        class="quick-card"
+                        data-page="calculator"
+                    >
+                        <span>🧮</span>
+                        <strong>Calculator</strong>
+                        <small>
+                            Calculate, count or graph
+                        </small>
+                    </button>
+
+                    <button
+                        class="quick-card"
+                        data-page="speed"
+                    >
+                        <span>⚡</span>
+                        <strong>Speed Challenge</strong>
+                        <small>
+                            60 seconds of maths
+                        </small>
                     </button>
 
                 </div>
 
-            </header>
+            </section>
 
 
             <!-- =================================================
-                 PAGE CONTENT
-                 ================================================= -->
-
-            <div class="page-content">
-
-
-                <!-- =================================================
-                     HOME PAGE
-                     ================================================= -->
-
-                <section
-                    class="page-section active"
-                    id="page-home"
-                    data-page-section="home"
-                >
-
-                    <div class="hero-section">
-
-                        <div class="hero-content">
-
-                            <span class="hero-badge">
-                                ✨ YOUR MATHS JOURNEY
-                            </span>
-
-                            <h1>
-                                Make Maths
-                                <span class="gradient-text">
-                                    Fun.
-                                </span>
-                            </h1>
-
-                            <p>
-                                Learn concepts, practise questions,
-                                challenge yourself and level up your
-                                maths skills.
-                            </p>
-
-
-                            <div class="hero-actions">
-
-                                <button
-                                    class="primary-button"
-                                    type="button"
-                                    data-page-target="chapters"
-                                >
-                                    Start Learning
-                                    <span>→</span>
-                                </button>
-
-                                <button
-                                    class="secondary-button"
-                                    type="button"
-                                    data-page-target="quiz"
-                                >
-                                    Take a Quiz
-                                </button>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="hero-visual">
-
-                            <div class="math-orbit">
-
-                                <div class="orbit-number number-one">
-                                    7
-                                </div>
-
-                                <div class="orbit-number number-two">
-                                    π
-                                </div>
-
-                                <div class="orbit-number number-three">
-                                    ∑
-                                </div>
-
-                                <div class="orbit-number number-four">
-                                    x²
-                                </div>
-
-                                <div class="orbit-center">
-                                    ∞
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Daily Goal -->
-
-                    <div class="daily-goal-card">
-
-                        <div class="daily-goal-info">
-
-                            <div class="section-icon">
-                                🎯
-                            </div>
-
-                            <div>
-
-                                <span class="small-label">
-                                    TODAY'S GOAL
-                                </span>
-
-                                <h3>
-                                    Keep your maths streak alive!
-                                </h3>
-
-                                <p id="dailyGoalText">
-                                    Solve 10 questions today.
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="daily-goal-progress">
-
-                            <div class="progress-circle">
-                                <span id="dailyGoalPercent">
-                                    0%
-                                </span>
-                            </div>
-
-                            <div>
-
-                                <strong id="dailyGoalCount">
-                                    0 / 10
-                                </strong>
-
-                                <span>
-                                    questions
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Quick Access -->
-
-                    <div class="section-heading-row">
-
-                        <div>
-                            <span class="small-label">
-                                QUICK ACCESS
-                            </span>
-
-                            <h2>
-                                What do you want to do?
-                            </h2>
-                        </div>
-
-                    </div>
-
-
-                    <div class="quick-access-grid">
-
-                        <button
-                            class="quick-card"
-                            type="button"
-                            data-page-target="chapters"
-                        >
-
-                            <span class="quick-card-icon">
-                                📚
-                            </span>
-
-                            <span class="quick-card-content">
-
-                                <strong>
-                                    Learn
-                                </strong>
-
-                                <span>
-                                    Explore maths chapters
-                                </span>
-
-                            </span>
-
-                            <span class="quick-arrow">
-                                →
-                            </span>
-
-                        </button>
-
-
-                        <button
-                            class="quick-card"
-                            type="button"
-                            data-page-target="practice"
-                        >
-
-                            <span class="quick-card-icon">
-                                ✎
-                            </span>
-
-                            <span class="quick-card-content">
-
-                                <strong>
-                                    Practise
-                                </strong>
-
-                                <span>
-                                    Sharpen your skills
-                                </span>
-
-                            </span>
-
-                            <span class="quick-arrow">
-                                →
-                            </span>
-
-                        </button>
-
-
-                        <button
-                            class="quick-card"
-                            type="button"
-                            data-page-target="quiz"
-                        >
-
-                            <span class="quick-card-icon">
-                                🎮
-                            </span>
-
-                            <span class="quick-card-content">
-
-                                <strong>
-                                    Quiz
-                                </strong>
-
-                                <span>
-                                    Test your knowledge
-                                </span>
-
-                            </span>
-
-                            <span class="quick-arrow">
-                                →
-                            </span>
-
-                        </button>
-
-
-                        <button
-                            class="quick-card"
-                            type="button"
-                            data-page-target="speed"
-                        >
-
-                            <span class="quick-card-icon">
-                                ⚡
-                            </span>
-
-                            <span class="quick-card-content">
-
-                                <strong>
-                                    Speed Challenge
-                                </strong>
-
-                                <span>
-                                    Beat your high score
-                                </span>
-
-                            </span>
-
-                            <span class="quick-arrow">
-                                →
-                            </span>
-
-                        </button>
-
-                    </div>
-
-
-                    <!-- Home Stats -->
-
-                    <div class="home-stats-grid">
-
-                        <article class="stat-card">
-
-                            <span class="stat-icon">
-                                ✦
-                            </span>
-
-                            <div>
-                                <span class="stat-label">
-                                    TOTAL XP
-                                </span>
-
-                                <strong id="homeXP">
-                                    0
-                                </strong>
-                            </div>
-
-                        </article>
-
-
-                        <article class="stat-card">
-
-                            <span class="stat-icon">
-                                🔥
-                            </span>
-
-                            <div>
-                                <span class="stat-label">
-                                    STREAK
-                                </span>
-
-                                <strong>
-                                    <span id="homeStreak">
-                                        0
-                                    </span>
-                                    days
-                                </strong>
-                            </div>
-
-                        </article>
-
-
-                        <article class="stat-card">
-
-                            <span class="stat-icon">
-                                ✓
-                            </span>
-
-                            <div>
-                                <span class="stat-label">
-                                    ACCURACY
-                                </span>
-
-                                <strong id="homeAccuracy">
-                                    0%
-                                </strong>
-                            </div>
-
-                        </article>
-
-
-                        <article class="stat-card">
-
-                            <span class="stat-icon">
-                                🏆
-                            </span>
-
-                            <div>
-                                <span class="stat-label">
-                                    LEVEL
-                                </span>
-
-                                <strong id="homeLevel">
-                                    Beginner
-                                </strong>
-                            </div>
-
-                        </article>
-
-                    </div>
-
-
-                    <!-- Featured Topic -->
-
-                    <div class="featured-topic-card">
-
-                        <div class="featured-topic-content">
-
-                            <span class="small-label">
-                                FEATURED TOPIC
-                            </span>
-
-                            <h2 id="featuredTopicTitle">
-                                Numbers & Number Systems
-                            </h2>
-
-                            <p id="featuredTopicDescription">
-                                Build a strong foundation by exploring
-                                numbers, operations and patterns.
-                            </p>
-
-                            <button
-                                class="text-button"
-                                type="button"
-                                data-page-target="chapters"
-                            >
-                                Explore Topic →
-                            </button>
-
-                        </div>
-
-
-                        <div class="featured-topic-symbol">
-                            123
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================================================
-                     CHAPTERS PAGE
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-chapters"
-                    data-page-section="chapters"
-                >
-
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            📚 LEARN
+                 LEARN
+            ================================================== -->
+
+            <section
+                class="page"
+                id="page-learn"
+            >
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">
+                            CLASS 8 • GANITA PRAKASH
                         </span>
 
-                        <h1>
+                        <h2>
                             Chapters
-                        </h1>
+                        </h2>
 
                         <p>
-                            Choose a chapter and start learning.
+                            Choose a chapter to open its learning page.
                         </p>
-
                     </div>
 
+                </div>
 
-                    <div
-                        class="chapters-grid"
-                        id="chaptersGrid"
-                    >
-
-                        <!-- Chapter cards are intentionally generated
-                             by JavaScript later. -->
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================================================
-                     PRACTICE PAGE
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-practice"
-                    data-page-section="practice"
+                <div
+                    class="part-title"
                 >
+                    <span>PART I</span>
+                    <h3>Ganita Prakash — Part I</h3>
+                </div>
 
-                    <div class="section-page-header">
+                <div
+                    class="chapter-grid"
+                    id="part1Chapters"
+                ></div>
 
-                        <span class="hero-badge">
-                            ✎ PRACTISE
+
+                <div
+                    class="part-title second-part"
+                >
+                    <span>PART II</span>
+                    <h3>Ganita Prakash — Part II</h3>
+                </div>
+
+                <div
+                    class="chapter-grid"
+                    id="part2Chapters"
+                ></div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CHAPTER DETAIL
+            ================================================== -->
+
+            <section
+                class="page"
+                id="page-chapter"
+            >
+
+                <button
+                    class="back-button"
+                    id="backToChapters"
+                >
+                    ← Back to Chapters
+                </button>
+
+                <div
+                    id="chapterDetail"
+                    class="chapter-detail"
+                ></div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PRACTICE
+            ================================================== -->
+
+            <section
+                class="page"
+                id="page-practice"
+            >
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">
+                            PRACTICE
                         </span>
 
-                        <h1>
-                            Practice
-                        </h1>
+                        <h2>
+                            Practice Arena
+                        </h2>
 
                         <p>
-                            Practise questions at your own pace.
+                            Sharpen your skills before taking the quiz.
                         </p>
-
                     </div>
 
+                </div>
 
-                    <div class="practice-layout">
+                <div class="practice-layout">
 
-                        <div class="practice-settings-card">
+                    <div class="practice-card">
 
-                            <h2>
-                                Practice Setup
-                            </h2>
+                        <h3>Choose a chapter</h3>
 
-                            <div class="form-group">
+                        <select
+                            id="practiceChapter"
+                            class="select-control"
+                        ></select>
 
-                                <label for="practiceChapter">
-                                    Chapter
-                                </label>
+                        <select
+                            id="practiceDifficulty"
+                            class="select-control"
+                        >
+                            <option value="easy">
+                                Easy
+                            </option>
 
-                                <select id="practiceChapter">
-                                    <option value="">
-                                        Select a chapter
-                                    </option>
-                                </select>
+                            <option value="medium" selected>
+                                Medium
+                            </option>
 
-                            </div>
+                            <option value="hard">
+                                Hard
+                            </option>
+                        </select>
 
-
-                            <div class="form-group">
-
-                                <label for="practiceDifficulty">
-                                    Difficulty
-                                </label>
-
-                                <select id="practiceDifficulty">
-
-                                    <option value="easy">
-                                        Easy
-                                    </option>
-
-                                    <option value="medium">
-                                        Medium
-                                    </option>
-
-                                    <option value="hard">
-                                        Hard
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-                            <button
-                                class="primary-button full-width"
-                                id="startPracticeButton"
-                                type="button"
-                            >
-                                Start Practice
-                            </button>
-
-                        </div>
-
-
-                        <div class="practice-info-card">
-
-                            <span class="large-card-icon">
-                                🧠
-                            </span>
-
-                            <h2>
-                                Practise makes progress
-                            </h2>
-
-                            <p>
-                                Solve questions, identify weak areas
-                                and improve your accuracy.
-                            </p>
-
-                        </div>
+                        <button
+                            class="primary-button full-width"
+                            id="startPractice"
+                        >
+                            Start Practice
+                        </button>
 
                     </div>
-
 
                     <div
-                        class="practice-question-area"
-                        id="practiceQuestionArea"
-                        hidden
+                        class="practice-question"
+                        id="practiceQuestion"
                     >
 
-                        <div class="quiz-progress-row">
-
-                            <span id="practiceQuestionNumber">
-                                Question 1
-                            </span>
-
-                            <span id="practiceScore">
-                                Score: 0
-                            </span>
-
+                        <div class="empty-state">
+                            <span>✏️</span>
+                            <h3>Ready to practise?</h3>
+                            <p>
+                                Select a chapter and start.
+                            </p>
                         </div>
 
+                    </div>
 
-                        <div
-                            class="question-card"
-                            id="practiceQuestionCard"
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 QUIZ
+            ================================================== -->
+
+            <section
+                class="page"
+                id="page-quiz"
+            >
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">
+                            QUIZ ARENA
+                        </span>
+
+                        <h2>
+                            Maths Quiz
+                        </h2>
+
+                        <p>
+                            50 random questions from a bank of
+                            1,000+ generated questions.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- QUIZ SETUP -->
+
+                <div
+                    class="quiz-setup"
+                    id="quizSetup"
+                >
+
+                    <div class="setup-card">
+
+                        <h3>Choose your quiz</h3>
+
+                        <label>
+                            Chapter
+                        </label>
+
+                        <select
+                            id="quizChapter"
+                            class="select-control"
+                        >
+                        </select>
+
+                        <label>
+                            Difficulty
+                        </label>
+
+                        <select
+                            id="quizDifficulty"
+                            class="select-control"
                         >
 
-                            <h2 id="practiceQuestion">
-                                Question
-                            </h2>
+                            <option value="easy">
+                                Easy
+                            </option>
 
-                            <div
-                                class="answer-options"
-                                id="practiceOptions"
-                            ></div>
+                            <option value="medium" selected>
+                                Medium
+                            </option>
 
-                        </div>
+                            <option value="hard">
+                                Hard
+                            </option>
 
-                    </div>
-
-                </section>
-
+                        </select>
 
 
-                <!-- =================================================
-                     QUIZ PAGE
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-quiz"
-                    data-page-section="quiz"
-                >
-
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            🎮 QUIZ GAME
-                        </span>
-
-                        <h1>
-                            Maths Quiz
-                        </h1>
-
-                        <p>
-                            Test yourself, build streaks and earn XP.
-                        </p>
-
-                    </div>
-
-
-                    <!-- Quiz Setup -->
-
-                    <div
-                        class="quiz-setup-card"
-                        id="quizSetup"
-                    >
-
-                        <div class="quiz-setup-header">
+                        <div class="difficulty-lock">
 
                             <div>
 
-                                <span class="small-label">
-                                    QUIZ SETUP
-                                </span>
+                                <strong>
+                                    Lock difficulty
+                                </strong>
 
-                                <h2>
-                                    Choose your challenge
-                                </h2>
-
-                            </div>
-
-                            <span class="quiz-setup-icon">
-                                🎯
-                            </span>
-
-                        </div>
-
-
-                        <div class="quiz-settings-grid">
-
-                            <div class="form-group">
-
-                                <label for="quizChapter">
-                                    Chapter
-                                </label>
-
-                                <select id="quizChapter">
-
-                                    <option value="mixed">
-                                        Mixed Maths
-                                    </option>
-
-                                </select>
+                                <small>
+                                    Prevent accidental changes during
+                                    the quiz.
+                                </small>
 
                             </div>
 
-
-                            <div class="form-group">
-
-                                <label for="quizDifficulty">
-                                    Difficulty
-                                </label>
-
-                                <select id="quizDifficulty">
-
-                                    <option value="easy">
-                                        Easy
-                                    </option>
-
-                                    <option value="medium">
-                                        Medium
-                                    </option>
-
-                                    <option value="hard">
-                                        Hard
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="quizQuestionCount">
-                                    Questions
-                                </label>
-
-                                <select id="quizQuestionCount">
-
-                                    <option value="10">
-                                        10 Questions
-                                    </option>
-
-                                    <option value="15">
-                                        15 Questions
-                                    </option>
-
-                                    <option value="20">
-                                        20 Questions
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-                        </div>
-
-
-                        <!-- Manual Difficulty Lock -->
-
-                        <div class="difficulty-lock-box">
-
-                            <div class="difficulty-lock-info">
-
-                                <span class="lock-icon">
-                                    🔒
-                                </span>
-
-                                <div>
-
-                                    <strong>
-                                        Lock Difficulty
-                                    </strong>
-
-                                    <p>
-                                        Keep the selected difficulty
-                                        throughout the quiz.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <label class="toggle-switch">
+                            <label class="switch">
 
                                 <input
                                     type="checkbox"
                                     id="difficultyLock"
                                 >
 
-                                <span class="toggle-slider"></span>
+                                <span class="slider"></span>
 
                             </label>
 
@@ -1123,2089 +600,783 @@
 
 
                         <div
-                            class="difficulty-warning"
+                            class="warning-box"
                             id="difficultyWarning"
-                            hidden
                         >
-
-                            <span>
-                                ⚠️
-                            </span>
-
-                            <p>
-                                <strong>
-                                    Difficulty Lock Warning
-                                </strong>
-
-                                If you answer incorrectly on
-                                <strong>15 out of 20</strong>
-                                or more questions, the locked difficulty
-                                may be too challenging.
-                            </p>
-
+                            ⚠️ Difficulty locking is recommended only
+                            if you are confident. If you get 15 out of
+                            20 questions wrong, the quiz will warn you.
                         </div>
 
 
                         <button
-                            class="primary-button quiz-start-button"
-                            id="startQuizButton"
-                            type="button"
+                            class="primary-button full-width"
+                            id="startQuiz"
                         >
-                            Start Quiz
-                            <span>→</span>
+                            Start 50-Question Quiz
                         </button>
 
                     </div>
 
-
-                    <!-- Quiz Game -->
-
-                    <div
-                        class="quiz-game"
-                        id="quizGame"
-                        hidden
-                    >
-
-                        <div class="quiz-game-top">
-
-                            <div class="quiz-counter">
-
-                                <span>
-                                    QUESTION
-                                </span>
-
-                                <strong id="quizQuestionNumber">
-                                    1 / 20
-                                </strong>
-
-                            </div>
+                </div>
 
 
-                            <div class="quiz-timer">
+                <!-- QUIZ GAME -->
 
-                                <span>
-                                    ⏱
-                                </span>
+                <div
+                    class="quiz-game hidden"
+                    id="quizGame"
+                >
 
-                                <strong id="quizTimer">
-                                    30
-                                </strong>
+                    <div class="quiz-top">
 
-                            </div>
+                        <div>
 
+                            <span id="quizQuestionNumber">
+                                Question 1 / 50
+                            </span>
 
-                            <div class="quiz-lives">
-
-                                <span>
-                                    ❤️
-                                </span>
-
-                                <strong id="quizLives">
-                                    3
-                                </strong>
-
+                            <div class="quiz-progress">
+                                <div
+                                    id="quizProgressBar"
+                                ></div>
                             </div>
 
                         </div>
 
+                        <div class="quiz-live-stats">
 
-                        <div class="quiz-progress-bar">
+                            <span>
+                                ❤️
+                                <b id="quizLives">3</b>
+                            </span>
 
-                            <div
-                                id="quizProgress"
-                                class="quiz-progress-fill"
-                            ></div>
-
-                        </div>
-
-
-                        <div class="quiz-question-card">
-
-                            <div class="question-category">
-                                <span id="quizCategory">
-                                    Mathematics
-                                </span>
-                            </div>
-
-                            <h2 id="quizQuestion">
-                                Question will appear here.
-                            </h2>
-
-
-                            <div
-                                class="quiz-options"
-                                id="quizOptions"
-                            >
-
-                                <!-- Options inserted by JS -->
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="quiz-footer">
-
-                            <div class="quiz-streak-display">
-
+                            <span>
                                 🔥
+                                <b id="quizStreak">0</b>
+                            </span>
 
-                                <strong id="quizStreak">
-                                    0
-                                </strong>
-
-                                streak
-
-                            </div>
-
-
-                            <div class="quiz-current-score">
-
-                                Score:
-                                <strong id="quizCurrentScore">
-                                    0
-                                </strong>
-
-                            </div>
+                            <span>
+                                ⭐
+                                <b id="quizScore">0</b>
+                            </span>
 
                         </div>
 
                     </div>
 
 
-                    <!-- Quiz Result -->
+                    <div class="question-card">
 
-                    <div
-                        class="quiz-result"
-                        id="quizResult"
-                        hidden
-                    >
-
-                        <div class="result-icon">
-                            🏆
+                        <div
+                            class="question-meta"
+                            id="questionMeta"
+                        >
                         </div>
 
-                        <span class="small-label">
-                            QUIZ COMPLETE
+                        <h3
+                            id="questionText"
+                        >
+                            Question
+                        </h3>
+
+                        <div
+                            class="answer-grid"
+                            id="answerGrid"
+                        ></div>
+
+                        <div
+                            class="question-feedback"
+                            id="questionFeedback"
+                        ></div>
+
+                        <button
+                            class="primary-button next-question"
+                            id="nextQuestion"
+                        >
+                            Next →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUIZ RESULTS -->
+
+                <div
+                    class="quiz-results hidden"
+                    id="quizResults"
+                >
+
+                    <div class="results-icon">
+                        🏆
+                    </div>
+
+                    <h2>
+                        Quiz Complete!
+                    </h2>
+
+                    <div class="result-stat-grid">
+
+                        <div>
+                            <strong id="resultScore">
+                                0
+                            </strong>
+                            <span>Score</span>
+                        </div>
+
+                        <div>
+                            <strong id="resultAccuracy">
+                                0%
+                            </strong>
+                            <span>Accuracy</span>
+                        </div>
+
+                        <div>
+                            <strong id="resultXP">
+                                +0
+                            </strong>
+                            <span>XP</span>
+                        </div>
+
+                    </div>
+
+                    <button
+                        class="primary-button"
+                        id="restartQuiz"
+                    >
+                        Take Another Quiz
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROGRESS
+            ================================================== -->
+
+            <section
+                class="page"
+                id="page-progress"
+            >
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">
+                            YOUR JOURNEY
                         </span>
 
                         <h2>
-                            Great work!
+                            Progress Dashboard
                         </h2>
 
-                        <p id="quizResultMessage">
-                            Here are your results.
+                        <p>
+                            See how your mathematics skills are growing.
                         </p>
+                    </div>
+
+                </div>
+
+                <div class="dashboard-grid">
+
+                    <div class="dashboard-card">
+                        <span>⭐</span>
+                        <strong id="dashXP">0</strong>
+                        <small>Total XP</small>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <span>🎯</span>
+                        <strong id="dashAccuracy">0%</strong>
+                        <small>Accuracy</small>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <span>🔥</span>
+                        <strong id="dashStreak">0</strong>
+                        <small>Current Streak</small>
+                    </div>
+
+                    <div class="dashboard-card">
+                        <span>📝</span>
+                        <strong id="dashSolved">0</strong>
+                        <small>Questions Solved</small>
+                    </div>
+
+                </div>
 
 
-                        <div class="result-stats-grid">
+                <div class="level-card">
 
-                            <div class="result-stat">
+                    <div>
 
-                                <strong id="resultScore">
-                                    0
-                                </strong>
+                        <span class="eyebrow">
+                            CURRENT LEVEL
+                        </span>
 
-                                <span>
-                                    Score
-                                </span>
+                        <h3 id="dashLevel">
+                            Level 1 — Beginner
+                        </h3>
 
+                    </div>
+
+                    <div class="large-level">
+                        1
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SPEED
+            ================================================== -->
+
+            <section
+                class="page"
+                id="page-speed"
+            >
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">
+                            ⚡ SPEED
+                        </span>
+
+                        <h2>
+                            60-Second Challenge
+                        </h2>
+
+                        <p>
+                            Solve as many questions as possible
+                            before time runs out.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="speed-card">
+
+                    <div class="speed-timer">
+                        <span id="speedTimer">
+                            60
+                        </span>
+                        <small>seconds</small>
+                    </div>
+
+                    <div
+                        id="speedQuestion"
+                        class="speed-question"
+                    >
+                        Press Start
+                    </div>
+
+                    <div
+                        id="speedAnswers"
+                        class="answer-grid"
+                    ></div>
+
+                    <div class="speed-stats">
+
+                        <span>
+                            Score:
+                            <b id="speedScore">0</b>
+                        </span>
+
+                        <span>
+                            Streak:
+                            <b id="speedStreak">0</b>
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="primary-button"
+                        id="startSpeed"
+                    >
+                        Start Challenge
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CALCULATOR
+            ================================================== -->
+
+            <section
+                class="page"
+                id="page-calculator"
+            >
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="eyebrow">
+                            CALCULATOR LAB
+                        </span>
+
+                        <h2>
+                            Maths Calculators
+                        </h2>
+
+                        <p>
+                            Choose a tool below.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="calculator-tabs">
+
+                    <button
+                        class="calculator-tab active"
+                        data-calculator="standard"
+                    >
+                        🧮 Standard
+                    </button>
+
+                    <button
+                        class="calculator-tab"
+                        data-calculator="abacus"
+                    >
+                        🟦 Abacus
+                    </button>
+
+                    <button
+                        class="calculator-tab"
+                        data-calculator="graph"
+                    >
+                        📈 Graph
+                    </button>
+
+                </div>
+
+
+                <!-- STANDARD -->
+
+                <div
+                    class="calculator-panel active"
+                    id="calculator-standard"
+                >
+
+                    <div class="standard-calculator">
+
+                        <input
+                            id="calcDisplay"
+                            class="calc-display"
+                            type="text"
+                            value=""
+                            readonly
+                        >
+
+                        <div class="calc-buttons">
+
+                            <button data-calc="clear">
+                                AC
+                            </button>
+
+                            <button data-calc="backspace">
+                                ⌫
+                            </button>
+
+                            <button data-calc="operator">
+                                %
+                            </button>
+
+                            <button data-calc="operator">
+                                ÷
+                            </button>
+
+                            <button>7</button>
+                            <button>8</button>
+                            <button>9</button>
+
+                            <button data-calc="operator">
+                                ×
+                            </button>
+
+                            <button>4</button>
+                            <button>5</button>
+                            <button>6</button>
+
+                            <button data-calc="operator">
+                                −
+                            </button>
+
+                            <button>1</button>
+                            <button>2</button>
+                            <button>3</button>
+
+                            <button data-calc="operator">
+                                +
+                            </button>
+
+                            <button>0</button>
+
+                            <button>
+                                .
+                            </button>
+
+                            <button data-calc="equals">
+                                =
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ABACUS -->
+
+                <div
+                    class="calculator-panel"
+                    id="calculator-abacus"
+                >
+
+                    <div class="abacus-panel">
+
+                        <div class="tool-header">
+
+                            <div>
+                                <h3>
+                                    Interactive Abacus
+                                </h3>
+
+                                <p>
+                                    Drag the beads or click them.
+                                </p>
                             </div>
 
+                            <strong id="abacusValue">
+                                0
+                            </strong>
 
-                            <div class="result-stat">
+                        </div>
 
-                                <strong id="resultAccuracy">
-                                    0%
-                                </strong>
+                        <div
+                            class="abacus"
+                            id="abacus"
+                        ></div>
 
-                                <span>
-                                    Accuracy
-                                </span>
+                        <button
+                            class="secondary-button"
+                            id="resetAbacus"
+                        >
+                            Reset Abacus
+                        </button>
 
-                            </div>
+                    </div>
 
-
-                            <div class="result-stat">
-
-                                <strong id="resultXP">
-                                    +0
-                                </strong>
-
-                                <span>
-                                    XP Earned
-                                </span>
-
-                            </div>
+                </div>
 
 
-                            <div class="result-stat">
+                <!-- GRAPH -->
 
-                                <strong id="resultStreak">
-                                    0
-                                </strong>
+                <div
+                    class="calculator-panel"
+                    id="calculator-graph"
+                >
 
-                                <span>
-                                    Best Streak
-                                </span>
+                    <div class="graph-panel">
 
+                        <div class="tool-header">
+
+                            <div>
+                                <h3>
+                                    Graph Plotter
+                                </h3>
+
+                                <p>
+                                    Enter a function such as
+                                    <code>2*x+3</code> or
+                                    <code>x*x</code>.
+                                </p>
                             </div>
 
                         </div>
 
+                        <div class="graph-controls">
 
-                        <div class="result-actions">
+                            <input
+                                id="graphExpression"
+                                class="text-input"
+                                type="text"
+                                value="x*x"
+                                placeholder="e.g. 2*x+3"
+                            >
 
                             <button
                                 class="primary-button"
-                                id="retryQuizButton"
-                                type="button"
+                                id="plotGraph"
                             >
-                                Try Again
+                                Plot Graph
                             </button>
 
                             <button
                                 class="secondary-button"
-                                data-page-target="home"
-                                type="button"
+                                id="clearGraph"
                             >
-                                Back Home
+                                Clear
                             </button>
 
                         </div>
 
+                        <canvas
+                            id="graphCanvas"
+                            width="900"
+                            height="500"
+                        ></canvas>
+
                     </div>
 
-                </section>
+                </div>
+
+            </section>
 
 
+            <!-- =================================================
+                 REAL LIFE
+            ================================================== -->
 
-                <!-- =================================================
-                     CALCULATORS PAGE
-                     ================================================= -->
+            <section
+                class="page"
+                id="page-real-life"
+            >
 
-                <section
-                    class="page-section"
-                    id="page-calculators"
-                    data-page-section="calculators"
-                >
+                <div class="page-header">
 
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            🧮 CALCULATORS
+                    <div>
+                        <span class="eyebrow">
+                            MATHS AROUND YOU
                         </span>
 
-                        <h1>
-                            Maths Calculators
-                        </h1>
-
-                        <p>
-                            Useful tools for solving and exploring maths.
-                        </p>
-
-                    </div>
-
-
-                    <div class="calculator-tabs">
-
-                        <button
-                            class="calculator-tab active"
-                            type="button"
-                            data-calculator="basic"
-                        >
-                            Basic
-                        </button>
-
-                        <button
-                            class="calculator-tab"
-                            type="button"
-                            data-calculator="scientific"
-                        >
-                            Scientific
-                        </button>
-
-                        <button
-                            class="calculator-tab"
-                            type="button"
-                            data-calculator="abacus"
-                        >
-                            Abacus
-                        </button>
-
-                        <button
-                            class="calculator-tab"
-                            type="button"
-                            data-calculator="graph"
-                        >
-                            Graph
-                        </button>
-
-                        <button
-                            class="calculator-tab"
-                            type="button"
-                            data-calculator="percentage"
-                        >
-                            Percentage
-                        </button>
-
-                        <button
-                            class="calculator-tab"
-                            type="button"
-                            data-calculator="geometry"
-                        >
-                            Geometry
-                        </button>
-
-                    </div>
-
-
-                    <!-- Basic Calculator -->
-
-                    <div
-                        class="calculator-panel active"
-                        id="calculator-basic"
-                    >
-
-                        <div class="calculator-shell">
-
-                            <div class="calculator-display">
-
-                                <div
-                                    id="calculatorHistory"
-                                    class="calculator-history"
-                                >
-                                    0
-                                </div>
-
-                                <div
-                                    id="calculatorDisplay"
-                                    class="calculator-main-display"
-                                >
-                                    0
-                                </div>
-
-                            </div>
-
-
-                            <div class="calculator-keypad">
-
-                                <button
-                                    type="button"
-                                    data-calc-action="clear"
-                                    class="calc-key function-key"
-                                >
-                                    AC
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-action="delete"
-                                    class="calc-key function-key"
-                                >
-                                    DEL
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="%"
-                                    class="calc-key function-key"
-                                >
-                                    %
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="/"
-                                    class="calc-key operator-key"
-                                >
-                                    ÷
-                                </button>
-
-
-                                <button
-                                    type="button"
-                                    data-calc-value="7"
-                                    class="calc-key"
-                                >
-                                    7
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="8"
-                                    class="calc-key"
-                                >
-                                    8
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="9"
-                                    class="calc-key"
-                                >
-                                    9
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="*"
-                                    class="calc-key operator-key"
-                                >
-                                    ×
-                                </button>
-
-
-                                <button
-                                    type="button"
-                                    data-calc-value="4"
-                                    class="calc-key"
-                                >
-                                    4
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="5"
-                                    class="calc-key"
-                                >
-                                    5
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="6"
-                                    class="calc-key"
-                                >
-                                    6
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="-"
-                                    class="calc-key operator-key"
-                                >
-                                    −
-                                </button>
-
-
-                                <button
-                                    type="button"
-                                    data-calc-value="1"
-                                    class="calc-key"
-                                >
-                                    1
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="2"
-                                    class="calc-key"
-                                >
-                                    2
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="3"
-                                    class="calc-key"
-                                >
-                                    3
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="+"
-                                    class="calc-key operator-key"
-                                >
-                                    +
-                                </button>
-
-
-                                <button
-                                    type="button"
-                                    data-calc-value="0"
-                                    class="calc-key zero-key"
-                                >
-                                    0
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-value="."
-                                    class="calc-key"
-                                >
-                                    .
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-calc-action="equals"
-                                    class="calc-key equals-key"
-                                >
-                                    =
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Scientific Calculator -->
-
-                    <div
-                        class="calculator-panel"
-                        id="calculator-scientific"
-                        hidden
-                    >
-
-                        <div class="scientific-calculator">
-
-                            <div
-                                class="scientific-display"
-                                id="scientificDisplay"
-                            >
-                                0
-                            </div>
-
-
-                            <div class="scientific-grid">
-
-                                <button
-                                    type="button"
-                                    data-scientific="sin"
-                                >
-                                    sin
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="cos"
-                                >
-                                    cos
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="tan"
-                                >
-                                    tan
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="sqrt"
-                                >
-                                    √
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="square"
-                                >
-                                    x²
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="cube"
-                                >
-                                    x³
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="log"
-                                >
-                                    log
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="ln"
-                                >
-                                    ln
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="pi"
-                                >
-                                    π
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="e"
-                                >
-                                    e
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="factorial"
-                                >
-                                    n!
-                                </button>
-
-                                <button
-                                    type="button"
-                                    data-scientific="clear"
-                                >
-                                    AC
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Abacus -->
-
-                    <div
-                        class="calculator-panel"
-                        id="calculator-abacus"
-                        hidden
-                    >
-
-                        <div class="abacus-container">
-
-                            <div class="calculator-panel-header">
-
-                                <div>
-
-                                    <span class="small-label">
-                                        INTERACTIVE TOOL
-                                    </span>
-
-                                    <h2>
-                                        Abacus
-                                    </h2>
-
-                                    <p>
-                                        Move the beads to explore
-                                        place value and numbers.
-                                    </p>
-
-                                </div>
-
-                                <div
-                                    class="abacus-value"
-                                    id="abacusValue"
-                                >
-                                    0
-                                </div>
-
-                            </div>
-
-
-                            <div
-                                class="abacus"
-                                id="abacus"
-                            >
-
-                                <!-- Abacus rods generated by JS -->
-
-                            </div>
-
-
-                            <div class="abacus-controls">
-
-                                <button
-                                    class="secondary-button"
-                                    id="resetAbacus"
-                                    type="button"
-                                >
-                                    Reset Abacus
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Graph Calculator -->
-
-                    <div
-                        class="calculator-panel"
-                        id="calculator-graph"
-                        hidden
-                    >
-
-                        <div class="graph-calculator">
-
-                            <div class="calculator-panel-header">
-
-                                <div>
-
-                                    <span class="small-label">
-                                        VISUAL CALCULATOR
-                                    </span>
-
-                                    <h2>
-                                        Graph Calculator
-                                    </h2>
-
-                                    <p>
-                                        Enter a function to plot its graph.
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="graph-controls">
-
-                                <div class="form-group">
-
-                                    <label for="graphFunction">
-                                        Function
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        id="graphFunction"
-                                        placeholder="Example: x^2"
-                                        autocomplete="off"
-                                    >
-
-                                </div>
-
-
-                                <button
-                                    class="primary-button"
-                                    id="plotGraphButton"
-                                    type="button"
-                                >
-                                    Plot Graph
-                                </button>
-
-                            </div>
-
-
-                            <div class="graph-canvas-container">
-
-                                <canvas
-                                    id="graphCanvas"
-                                    width="900"
-                                    height="500"
-                                ></canvas>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Percentage Calculator -->
-
-                    <div
-                        class="calculator-panel"
-                        id="calculator-percentage"
-                        hidden
-                    >
-
-                        <div class="special-calculator-card">
-
-                            <h2>
-                                Percentage Calculator
-                            </h2>
-
-                            <div class="calculator-input-grid">
-
-                                <div class="form-group">
-
-                                    <label for="percentageValue">
-                                        Number
-                                    </label>
-
-                                    <input
-                                        type="number"
-                                        id="percentageValue"
-                                        placeholder="100"
-                                    >
-
-                                </div>
-
-
-                                <div class="form-group">
-
-                                    <label for="percentageRate">
-                                        Percentage
-                                    </label>
-
-                                    <input
-                                        type="number"
-                                        id="percentageRate"
-                                        placeholder="20"
-                                    >
-
-                                </div>
-
-                            </div>
-
-
-                            <button
-                                class="primary-button"
-                                id="calculatePercentage"
-                                type="button"
-                            >
-                                Calculate
-                            </button>
-
-
-                            <div
-                                class="calculator-result"
-                                id="percentageResult"
-                            >
-                                Result will appear here.
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Geometry Calculator -->
-
-                    <div
-                        class="calculator-panel"
-                        id="calculator-geometry"
-                        hidden
-                    >
-
-                        <div class="special-calculator-card">
-
-                            <h2>
-                                Geometry Calculator
-                            </h2>
-
-                            <div class="geometry-options">
-
-                                <button
-                                    type="button"
-                                    class="geometry-option active"
-                                    data-shape="rectangle"
-                                >
-                                    Rectangle
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="geometry-option"
-                                    data-shape="circle"
-                                >
-                                    Circle
-                                </button>
-
-                                <button
-                                    type="button"
-                                    class="geometry-option"
-                                    data-shape="triangle"
-                                >
-                                    Triangle
-                                </button>
-
-                            </div>
-
-
-                            <div
-                                id="geometryInputs"
-                                class="calculator-input-grid"
-                            >
-
-                                <div class="form-group">
-
-                                    <label for="geometryLength">
-                                        Length
-                                    </label>
-
-                                    <input
-                                        type="number"
-                                        id="geometryLength"
-                                        placeholder="10"
-                                    >
-
-                                </div>
-
-
-                                <div class="form-group">
-
-                                    <label for="geometryWidth">
-                                        Width
-                                    </label>
-
-                                    <input
-                                        type="number"
-                                        id="geometryWidth"
-                                        placeholder="5"
-                                    >
-
-                                </div>
-
-                            </div>
-
-
-                            <button
-                                class="primary-button"
-                                id="calculateGeometry"
-                                type="button"
-                            >
-                                Calculate
-                            </button>
-
-
-                            <div
-                                class="calculator-result"
-                                id="geometryResult"
-                            >
-                                Result will appear here.
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================================================
-                     SPEED CHALLENGE
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-speed"
-                    data-page-section="speed"
-                >
-
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            ⚡ 60 SECOND CHALLENGE
-                        </span>
-
-                        <h1>
-                            Speed Challenge
-                        </h1>
-
-                        <p>
-                            How many questions can you solve in 60 seconds?
-                        </p>
-
-                    </div>
-
-
-                    <div class="speed-challenge-card">
-
-                        <div class="speed-header">
-
-                            <div>
-
-                                <span class="small-label">
-                                    PERSONAL BEST
-                                </span>
-
-                                <h2 id="speedHighScore">
-                                    0
-                                </h2>
-
-                            </div>
-
-
-                            <div class="speed-timer">
-
-                                <span>
-                                    TIME
-                                </span>
-
-                                <strong id="speedTimer">
-                                    60
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="speed-settings">
-
-                            <div class="form-group">
-
-                                <label for="speedDifficulty">
-                                    Difficulty
-                                </label>
-
-                                <select id="speedDifficulty">
-
-                                    <option value="easy">
-                                        Easy
-                                    </option>
-
-                                    <option value="medium">
-                                        Medium
-                                    </option>
-
-                                    <option value="hard">
-                                        Hard
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-
-                            <div class="form-group">
-
-                                <label for="speedMode">
-                                    Mode
-                                </label>
-
-                                <select id="speedMode">
-
-                                    <option value="mixed">
-                                        Mixed
-                                    </option>
-
-                                    <option value="numbers">
-                                        Numbers
-                                    </option>
-
-                                    <option value="algebra">
-                                        Algebra
-                                    </option>
-
-                                    <option value="geometry">
-                                        Geometry
-                                    </option>
-
-                                </select>
-
-                            </div>
-
-                        </div>
-
-
-                        <div
-                            class="speed-question-area"
-                            id="speedQuestionArea"
-                        >
-
-                            <div class="speed-score">
-
-                                <span>
-                                    SCORE
-                                </span>
-
-                                <strong id="speedScore">
-                                    0
-                                </strong>
-
-                            </div>
-
-
-                            <h2 id="speedQuestion">
-                                Ready?
-                            </h2>
-
-
-                            <input
-                                type="number"
-                                id="speedAnswer"
-                                placeholder="Your answer"
-                                autocomplete="off"
-                            >
-
-
-                            <button
-                                class="primary-button"
-                                id="startSpeedButton"
-                                type="button"
-                            >
-                                Start Challenge
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================================================
-                     DAILY CHALLENGE
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-daily"
-                    data-page-section="daily"
-                >
-
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            ⭐ DAILY
-                        </span>
-
-                        <h1>
-                            Daily Challenge
-                        </h1>
-
-                        <p>
-                            Complete today's challenge and earn bonus XP.
-                        </p>
-
-                    </div>
-
-
-                    <div class="daily-challenge-card">
-
-                        <div class="daily-date">
-                            <span id="dailyDay">
-                                TODAY
-                            </span>
-
-                            <strong id="dailyDate">
-                                —
-                            </strong>
-                        </div>
-
-
-                        <div class="daily-question">
-
-                            <span class="small-label">
-                                TODAY'S QUESTION
-                            </span>
-
-                            <h2 id="dailyQuestion">
-                                Your daily question will appear here.
-                            </h2>
-
-                        </div>
-
-
-                        <div
-                            class="daily-options"
-                            id="dailyOptions"
-                        ></div>
-
-
-                        <div class="daily-footer">
-
-                            <span>
-                                Bonus XP:
-                                <strong>
-                                    +50 XP
-                                </strong>
-                            </span>
-
-                            <span id="dailyStatus">
-                                Not completed
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================================================
-                     PROGRESS PAGE
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-progress"
-                    data-page-section="progress"
-                >
-
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            📊 YOUR PROGRESS
-                        </span>
-
-                        <h1>
-                            Progress Dashboard
-                        </h1>
-
-                        <p>
-                            See how far you've come.
-                        </p>
-
-                    </div>
-
-
-                    <div class="progress-overview-grid">
-
-                        <article class="progress-stat-card">
-
-                            <span>
-                                QUESTIONS SOLVED
-                            </span>
-
-                            <strong id="progressQuestions">
-                                0
-                            </strong>
-
-                        </article>
-
-
-                        <article class="progress-stat-card">
-
-                            <span>
-                                ACCURACY
-                            </span>
-
-                            <strong id="progressAccuracy">
-                                0%
-                            </strong>
-
-                        </article>
-
-
-                        <article class="progress-stat-card">
-
-                            <span>
-                                TOTAL XP
-                            </span>
-
-                            <strong id="progressXP">
-                                0
-                            </strong>
-
-                        </article>
-
-
-                        <article class="progress-stat-card">
-
-                            <span>
-                                BEST STREAK
-                            </span>
-
-                            <strong id="progressBestStreak">
-                                0
-                            </strong>
-
-                        </article>
-
-                    </div>
-
-
-                    <div class="progress-main-grid">
-
-                        <div class="progress-chart-card">
-
-                            <div class="card-heading">
-
-                                <div>
-
-                                    <span class="small-label">
-                                        PERFORMANCE
-                                    </span>
-
-                                    <h2>
-                                        Weekly Progress
-                                    </h2>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="chart-placeholder">
-
-                                <canvas
-                                    id="progressChart"
-                                    width="800"
-                                    height="350"
-                                ></canvas>
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="strength-card">
-
-                            <div class="card-heading">
-
-                                <div>
-
-                                    <span class="small-label">
-                                        ANALYSIS
-                                    </span>
-
-                                    <h2>
-                                        Your Skills
-                                    </h2>
-
-                                </div>
-
-                            </div>
-
-
-                            <div class="skill-row">
-
-                                <div class="skill-info">
-
-                                    <span>
-                                        Strongest Chapter
-                                    </span>
-
-                                    <strong id="strongestChapter">
-                                        —
-                                    </strong>
-
-                                </div>
-
-                                <div class="skill-meter">
-                                    <div
-                                        id="strongestMeter"
-                                        class="skill-meter-fill"
-                                    ></div>
-                                </div>
-
-                            </div>
-
-
-                            <div class="skill-row">
-
-                                <div class="skill-info">
-
-                                    <span>
-                                        Needs Practice
-                                    </span>
-
-                                    <strong id="weakestChapter">
-                                        —
-                                    </strong>
-
-                                </div>
-
-                                <div class="skill-meter">
-                                    <div
-                                        id="weakestMeter"
-                                        class="skill-meter-fill"
-                                    ></div>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================================================
-                     ACHIEVEMENTS
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-achievements"
-                    data-page-section="achievements"
-                >
-
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            🏆 ACHIEVEMENTS
-                        </span>
-
-                        <h1>
-                            Badges & Achievements
-                        </h1>
-
-                        <p>
-                            Unlock achievements as you progress.
-                        </p>
-
-                    </div>
-
-
-                    <div
-                        class="achievements-grid"
-                        id="achievementsGrid"
-                    >
-
-                        <!-- Generated by JavaScript -->
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================================================
-                     LEADERBOARD
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-leaderboard"
-                    data-page-section="leaderboard"
-                >
-
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            🏆 LEADERBOARD
-                        </span>
-
-                        <h1>
-                            Leaderboard
-                        </h1>
-
-                        <p>
-                            See how you rank.
-                        </p>
-
-                    </div>
-
-
-                    <div class="leaderboard-card">
-
-                        <div class="leaderboard-header">
-
-                            <span>
-                                RANK
-                            </span>
-
-                            <span>
-                                PLAYER
-                            </span>
-
-                            <span>
-                                LEVEL
-                            </span>
-
-                            <span>
-                                XP
-                            </span>
-
-                        </div>
-
-
-                        <div
-                            class="leaderboard-list"
-                            id="leaderboardList"
-                        >
-
-                            <!-- Generated by JS -->
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================================================
-                     MATHS IN REAL LIFE
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-real-life"
-                    data-page-section="real-life"
-                >
-
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            🌍 REAL LIFE MATHS
-                        </span>
-
-                        <h1>
+                        <h2>
                             Maths in Real Life
-                        </h1>
+                        </h2>
 
                         <p>
-                            Discover how maths is used around you.
+                            See where mathematics appears in everyday life.
                         </p>
-
                     </div>
 
+                </div>
 
-                    <div class="real-life-grid">
+                <div class="real-life-grid">
 
-                        <article class="real-life-card">
+                    <article>
+                        <span>🛍️</span>
+                        <h3>Shopping</h3>
+                        <p>
+                            Percentages help calculate discounts,
+                            taxes and final prices.
+                        </p>
+                    </article>
 
-                            <span class="real-life-icon">
-                                🛒
-                            </span>
+                    <article>
+                        <span>🍳</span>
+                        <h3>Recipes</h3>
+                        <p>
+                            Ratios help scale ingredients up or down.
+                        </p>
+                    </article>
 
-                            <h2>
-                                Shopping
-                            </h2>
+                    <article>
+                        <span>⚽</span>
+                        <h3>Sports</h3>
+                        <p>
+                            Statistics, averages and graphs help
+                            compare performance.
+                        </p>
+                    </article>
 
-                            <p>
-                                Use percentages to calculate discounts,
-                                taxes and final prices.
-                            </p>
+                    <article>
+                        <span>🏗️</span>
+                        <h3>Buildings</h3>
+                        <p>
+                            Geometry, measurement and proportion
+                            are essential in construction.
+                        </p>
+                    </article>
 
-                            <button
-                                type="button"
-                                class="text-button"
-                            >
-                                Explore →
-                            </button>
+                    <article>
+                        <span>💰</span>
+                        <h3>Money</h3>
+                        <p>
+                            Algebra can help find unknown costs.
+                        </p>
+                    </article>
 
-                        </article>
+                    <article>
+                        <span>📐</span>
+                        <h3>Measurement</h3>
+                        <p>
+                            Area and perimeter are used to plan
+                            rooms and spaces.
+                        </p>
+                    </article>
 
+                </div>
 
-                        <article class="real-life-card">
-
-                            <span class="real-life-icon">
-                                🍳
-                            </span>
-
-                            <h2>
-                                Recipes
-                            </h2>
-
-                            <p>
-                                Use ratios and fractions to change
-                                ingredient quantities.
-                            </p>
-
-                            <button
-                                type="button"
-                                class="text-button"
-                            >
-                                Explore →
-                            </button>
-
-                        </article>
-
-
-                        <article class="real-life-card">
-
-                            <span class="real-life-icon">
-                                🏢
-                            </span>
-
-                            <h2>
-                                Buildings
-                            </h2>
-
-                            <p>
-                                Geometry and measurement help design
-                                buildings and structures.
-                            </p>
-
-                            <button
-                                type="button"
-                                class="text-button"
-                            >
-                                Explore →
-                            </button>
-
-                        </article>
+            </section>
 
 
-                        <article class="real-life-card">
+            <!-- =================================================
+                 TRICKS
+            ================================================== -->
 
-                            <span class="real-life-icon">
-                                ⚽
-                            </span>
+            <section
+                class="page"
+                id="page-tricks"
+            >
 
-                            <h2>
-                                Sports
-                            </h2>
+                <div class="page-header">
 
-                            <p>
-                                Graphs, averages, percentages and
-                                statistics are everywhere in sports.
-                            </p>
-
-                            <button
-                                type="button"
-                                class="text-button"
-                            >
-                                Explore →
-                            </button>
-
-                        </article>
-
-
-                        <article class="real-life-card">
-
-                            <span class="real-life-icon">
-                                📐
-                            </span>
-
-                            <h2>
-                                Measurements
-                            </h2>
-
-                            <p>
-                                Calculate areas, volumes and dimensions
-                                of real spaces.
-                            </p>
-
-                            <button
-                                type="button"
-                                class="text-button"
-                            >
-                                Explore →
-                            </button>
-
-                        </article>
-
-
-                        <article class="real-life-card">
-
-                            <span class="real-life-icon">
-                                💰
-                            </span>
-
-                            <h2>
-                                Costs
-                            </h2>
-
-                            <p>
-                                Algebra can help calculate unknown costs,
-                                budgets and savings.
-                            </p>
-
-                            <button
-                                type="button"
-                                class="text-button"
-                            >
-                                Explore →
-                            </button>
-
-                        </article>
-
-                    </div>
-
-                </section>
-
-
-
-                <!-- =================================================
-                     MATHS TRICKS
-                     ================================================= -->
-
-                <section
-                    class="page-section"
-                    id="page-tricks"
-                    data-page-section="tricks"
-                >
-
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            💡 SMART MATHS
+                    <div>
+                        <span class="eyebrow">
+                            SMART MATHS
                         </span>
 
-                        <h1>
+                        <h2>
                             Maths Tricks
-                        </h1>
+                        </h2>
 
                         <p>
-                            Learn faster ways to solve common problems.
+                            Quick methods to make calculations easier.
                         </p>
-
                     </div>
 
+                </div>
 
-                    <div
-                        class="tricks-grid"
-                        id="tricksGrid"
-                    >
+                <div class="tricks-grid">
 
-                        <article class="trick-card">
+                    <article>
+                        <span>×10</span>
+                        <h3>Multiply by 10</h3>
+                        <p>
+                            Move the decimal point one place to the right.
+                        </p>
+                    </article>
 
-                            <span>
-                                ✖️
-                            </span>
+                    <article>
+                        <span>×5</span>
+                        <h3>Multiply by 5</h3>
+                        <p>
+                            Multiply by 10 and divide by 2.
+                        </p>
+                    </article>
 
-                            <h2>
-                                Multiplication Tricks
-                            </h2>
+                    <article>
+                        <span>÷5</span>
+                        <h3>Divide by 5</h3>
+                        <p>
+                            Multiply by 2 and divide by 10.
+                        </p>
+                    </article>
 
-                            <p>
-                                Discover shortcuts for multiplying
-                                numbers quickly.
-                            </p>
+                    <article>
+                        <span>²</span>
+                        <h3>Square numbers ending in 5</h3>
+                        <p>
+                            For 35², calculate 3×4 and append 25:
+                            1225.
+                        </p>
+                    </article>
 
-                        </article>
+                    <article>
+                        <span>9</span>
+                        <h3>Divisibility by 9</h3>
+                        <p>
+                            Add the digits. If the sum is divisible
+                            by 9, so is the number.
+                        </p>
+                    </article>
 
+                    <article>
+                        <span>11</span>
+                        <h3>Divisibility by 11</h3>
+                        <p>
+                            Use the alternating digit-sum test.
+                        </p>
+                    </article>
 
-                        <article class="trick-card">
+                </div>
 
-                            <span>
-                                💯
-                            </span>
-
-                            <h2>
-                                Percentage Tricks
-                            </h2>
-
-                            <p>
-                                Calculate common percentages mentally.
-                            </p>
-
-                        </article>
-
-
-                        <article class="trick-card">
-
-                            <span>
-                                🔢
-                            </span>
-
-                            <h2>
-                                Number Tricks
-                            </h2>
-
-                            <p>
-                                Spot patterns and simplify calculations.
-                            </p>
-
-                        </article>
-
-
-                        <article class="trick-card">
-
-                            <span>
-                                📐
-                            </span>
-
-                            <h2>
-                                Geometry Tricks
-                            </h2>
-
-                            <p>
-                                Remember formulas and solve shapes faster.
-                            </p>
-
-                        </article>
-
-                    </div>
-
-                </section>
+            </section>
 
 
+            <!-- =================================================
+                 SETTINGS
+            ================================================== -->
 
-                <!-- =================================================
-                     SETTINGS
-                     ================================================= -->
+            <section
+                class="page"
+                id="page-settings"
+            >
 
-                <section
-                    class="page-section"
-                    id="page-settings"
-                    data-page-section="settings"
-                >
+                <div class="page-header">
 
-                    <div class="section-page-header">
-
-                        <span class="hero-badge">
-                            ⚙ SETTINGS
+                    <div>
+                        <span class="eyebrow">
+                            SETTINGS
                         </span>
 
-                        <h1>
+                        <h2>
                             Settings
-                        </h1>
+                        </h2>
 
                         <p>
-                            Customize your Maths Hub experience.
+                            Control your Maths Hub experience.
                         </p>
-
                     </div>
 
-
-                    <div class="settings-card">
-
-                        <div class="settings-row">
-
-                            <div>
-
-                                <strong>
-                                    Sound Effects
-                                </strong>
-
-                                <p>
-                                    Enable sounds during quizzes and
-                                    challenges.
-                                </p>
-
-                            </div>
-
-                            <label class="toggle-switch">
-
-                                <input
-                                    type="checkbox"
-                                    id="soundToggle"
-                                    checked
-                                >
-
-                                <span class="toggle-slider"></span>
-
-                            </label>
-
-                        </div>
-
-
-                        <div class="settings-row">
-
-                            <div>
-
-                                <strong>
-                                    Dark Mode
-                                </strong>
-
-                                <p>
-                                    Change the appearance of the website.
-                                </p>
-
-                            </div>
-
-                            <label class="toggle-switch">
-
-                                <input
-                                    type="checkbox"
-                                    id="darkModeToggle"
-                                >
-
-                                <span class="toggle-slider"></span>
-
-                            </label>
-
-                        </div>
-
-
-                        <div class="settings-row">
-
-                            <div>
-
-                                <strong>
-                                    Reset Progress
-                                </strong>
-
-                                <p>
-                                    Clear XP, streaks and quiz statistics.
-                                </p>
-
-                            </div>
-
-                            <button
-                                class="danger-button"
-                                id="resetProgressButton"
-                                type="button"
-                            >
-                                Reset
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </div>
-
-        </main>
-
-    </div>
-
-
-
-    <!-- =========================================================
-         MODALS
-         ========================================================= -->
-
-
-    <!-- Profile Modal -->
-
-    <div
-        class="modal-overlay"
-        id="profileModal"
-        hidden
-    >
-
-        <div
-            class="modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="profileModalTitle"
-        >
-
-            <button
-                class="modal-close"
-                data-close-modal="profileModal"
-                type="button"
-                aria-label="Close"
-            >
-                ×
-            </button>
-
-
-            <div class="modal-icon">
-                👤
-            </div>
-
-            <h2 id="profileModalTitle">
-                Maths Learner
-            </h2>
-
-            <p>
-                Your personal Maths Hub profile.
-            </p>
-
-
-            <div class="profile-modal-stats">
-
-                <div>
-                    <strong id="modalXP">
-                        0
-                    </strong>
-
-                    <span>
-                        XP
-                    </span>
                 </div>
 
+                <div class="settings-card">
 
-                <div>
-                    <strong id="modalLevel">
-                        Beginner
-                    </strong>
+                    <button
+                        class="secondary-button"
+                        id="resetProgress"
+                    >
+                        Reset Progress
+                    </button>
 
-                    <span>
-                        Level
-                    </span>
+                    <p class="danger-note">
+                        This removes XP, streaks and quiz statistics
+                        stored on this device.
+                    </p>
+
                 </div>
 
-
-                <div>
-                    <strong id="modalStreak">
-                        0
-                    </strong>
-
-                    <span>
-                        Streak
-                    </span>
-                </div>
-
-            </div>
+            </section>
 
         </div>
 
-    </div>
+    </main>
+
+</div>
 
 
+<!-- MOBILE OVERLAY -->
 
-    <!-- Alert Modal -->
-
-    <div
-        class="modal-overlay"
-        id="alertModal"
-        hidden
-    >
-
-        <div
-            class="modal alert-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="alertModalTitle"
-        >
-
-            <button
-                class="modal-close"
-                data-close-modal="alertModal"
-                type="button"
-                aria-label="Close"
-            >
-                ×
-            </button>
+<div
+    id="sidebarOverlay"
+    class="sidebar-overlay"
+></div>
 
 
-            <div
-                class="modal-icon"
-                id="alertModalIcon"
-            >
-                ⚠️
-            </div>
-
-            <h2 id="alertModalTitle">
-                Notice
-            </h2>
-
-            <p id="alertModalMessage">
-                Message
-            </p>
-
-
-            <button
-                class="primary-button"
-                data-close-modal="alertModal"
-                type="button"
-            >
-                OK
-            </button>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =========================================================
-         TOAST NOTIFICATION
-         ========================================================= -->
-
-    <div
-        class="toast"
-        id="toast"
-        role="status"
-        aria-live="polite"
-        hidden
-    >
-
-        <span
-            class="toast-icon"
-            id="toastIcon"
-        >
-            ✓
-        </span>
-
-        <span
-            class="toast-message"
-            id="toastMessage"
-        >
-            Success
-        </span>
-
-    </div>
-
-
-
-    <!-- =========================================================
-         JAVASCRIPT
-         ========================================================= -->
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
