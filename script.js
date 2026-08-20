@@ -2659,3 +2659,71 @@ if (
 } else {
     initializeApp();
 }
+    calculateLevel();
+
+    setupEventListeners();
+
+    updateDashboard();
+
+    updateDifficultyUI();
+
+    renderBadges();
+
+    generateDailyChallenge();
+
+    updateCalculatorDisplay();
+
+    updateAbacus();
+
+    /*
+     * Show homepage by default.
+     */
+
+    const homepage =
+        document.querySelector(
+            "#home"
+        );
+
+    if (homepage) {
+        showSection("home");
+    }
+
+    /*
+     * Make sure quiz results are
+     * initially hidden.
+     */
+
+    $all(
+        ".modal"
+    ).forEach(modal => {
+        modal.setAttribute(
+            "aria-hidden",
+            modal.classList.contains(
+                "open"
+            )
+                ? "false"
+                : "true"
+        );
+    });
+
+    console.log(
+        "Interactive Maths Hub initialized successfully."
+    );
+}
+
+
+/* =========================================================
+   35. START APPLICATION
+   ========================================================= */
+
+if (
+    document.readyState ===
+    "loading"
+) {
+    document.addEventListener(
+        "DOMContentLoaded",
+        initializeApp
+    );
+} else {
+    initializeApp();
+}
